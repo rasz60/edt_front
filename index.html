@@ -11,32 +11,45 @@
 </head>
 
 <body>
-    <header id="top">
+
+    <header id="header">
         <div id="logo">
-            <img src="resources/img/logo-basic.png" onclick="">
+            <img src="resources/img/logo-basic.png" onclick="location.href='index.html'">
         </div>
 
         <div id="search">
             <input type="search" name="search" autofocus autocomplete="off" onfocus="this.placeholder=''" onblur="this.placeholder='brand, name, model . . .'">
-            <img src="resources/img/search_btn2.png" onclick="">
+            <img src="resources/img/search_btn2.png" onclick="location.href='#'">
         </div>
 
         <div id="menu">
             <ul>
-                <li>DRAW</li>
-                <li>SHOP</li>
-                <li>JOIN</li>
-                <li>LOGIN</li>
+                <li onclick="location.href='#'">DRAW</li>
+                <li onclick="location.href='#'">SHOP</li>
+                <li onclick="location.href='#'">JOIN</li>
+                <li onclick="location.href='#'">LOGIN</li>
             </ul>
         </div>
     </header>
 
     <section class="box">
         <div id="img_slide">
-            <div class="img_box">
-                <img src="resources/img/slide1.jpg">
-            </div>
+            <img src="resources/img/slide1.jpg">
+            <img src="resources/img/slide2.jpg">
+            <img src="resources/img/slide3.jpg">
+            <img src="resources/img/slide4.jpg">
+        </div>
 
+        <div id="slide_btn1">
+            <span id="prev" onclick="slide_prev()"><</span>
+            <span id="next" onclick="slide_next()"">></span>
+        </div>
+
+        <div id="slide_btn2">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
         </div>
     </section>
 

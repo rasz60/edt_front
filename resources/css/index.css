@@ -45,15 +45,8 @@ header > #logo {
     display: flex ;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
-
-
-header > #back_logo {
-    position: fixed ; top: 0;
-    margin: 0 0;
-    z-index: 2;
-}
-
 
 header > #search {
     display: flex;
@@ -85,10 +78,14 @@ header > #search > input::placeholder {
     font-weight: 100;
 }
 
-
 header > #search > img {
     margin-left: 0;
     cursor: pointer;
+    transition: transform 2s;
+}
+
+header > #search > img:hover {
+    transform: rotate(360deg);
 }
 
 header > #menu {
@@ -110,8 +107,14 @@ header > #menu > ul > li {
     height: 100% ;
     min-height: 100px ;
     border: 0 0.1 0 0.1 solid rgb(219, 215, 215) ;
+    transition: font-size 1s;
+    cursor: pointer;
 }
 
+
+header > #menu > ul > li:hover {
+    font-size : 35px;
+}
 
 .box {
     border: 1px solid red;
@@ -124,23 +127,61 @@ header > #menu > ul > li {
 }
 
 .box:nth-of-type(1) {
-    margin-top: 5.1%;
-}
-
-
-.box > #img_slide > .img_box {
-    display: flex;
-    width: 100% ;
-    height: 100% ;
-    min-height: 500px ;
-    max-height: 625px ;
+    position: relative;
+    margin-top: 5%;
     overflow: hidden;
 }
 
-.box > #img_slide > .img_box > img {
+
+#img_slide {
+    display: flex;
+    width: 100%;
+    height: 100% ;
     object-fit: cover;
+    background-color: rgb(54, 54, 54);
+}
+
+#img_slide img {
     width: 100%;
     height: 100%;
+}
+
+#slide_btn1 {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    color: white;
+    background-color: transparent;
+}
+
+#slide_btn1 > span {
+    margin: 0 2% ;
+    font-size: 7em;
+    opacity: 0.4;    
+    transition: transform 300;
+}
+
+#slide_btn1 > span:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#slide_btn2 {
+    position: absolute;
+    width: 100%;
+    top: 93% ;
+}
+
+#slide_btn2 > button {
+    width: 2%;
+    margin: 0 4px;
+    opacity: 0.6;
+    transition: transform 300;
+}
+
+#slide_btn2 > button:hover {
+    opacity: 0.9;
 }
 
 .box > #product {
