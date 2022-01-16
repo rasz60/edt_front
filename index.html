@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/index.css" type="text/css">
     <title>side_project_2</title>
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
 </head>
 
 <body>
-
     <header id="header">
         <div id="logo">
             <img src="resources/img/logo-basic.png" onclick="location.href='index.html'">
@@ -33,30 +30,130 @@
     </header>
 
     <section class="box">
-        <div id="img_slide">
-            <img src="resources/img/slide1.jpg">
-            <img src="resources/img/slide2.jpg">
-            <img src="resources/img/slide3.jpg">
-            <img src="resources/img/slide4.jpg">
+        <div id="container">
+            <ul id="img_slide">
+                <li class="slides">
+                    <img src="resources/img/fix_slide1.jpg">
+                </li>
+                <li class="slides">
+                    <img src="resources/img/fix_slide2.jpg">
+                </li>
+                <li class="slides">
+                    <img src="resources/img/fix_slide3.jpg">
+                </li>
+                <li class="slides">
+                    <img src="resources/img/fix_slide4.jpg">
+                </li>
+            </ul>
         </div>
 
         <div id="slide_btn1">
-            <span id="prev" onclick="slide_prev()"><</span>
-            <span id="next" onclick="slide_next()"">></span>
+            <span id="prev" onclick="prev_btn()"><</span>
+            <span id="next" onclick="next_btn()">></span>
         </div>
 
         <div id="slide_btn2">
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button id="btn1" onclick="moveSlide(1);"></button>
+            <button id="btn2" onclick="moveSlide(2);"></button>
+            <button id="btn3" onclick="moveSlide(3);"></button>
+            <button id="btn4" onclick="moveSlide(4);"></button>
         </div>
+        <script>
+            var slideBox = document.getElementById('img_slide');
+            var slideIndex = 1;
+            var slideCount = document.querySelectorAll('.slides').length;
+
+            /*이미지 슬라이드 이동 함수*/
+            function moveSlide(num) {
+                switch(num) {
+                    case 1 :
+                        slideBox.style.transform = 'translate(0%)';
+                        slideIndex = 1;
+                        break;
+                    case 2 :
+                        slideBox.style.transform = 'translate(-25%)';
+                        slideIndex = 2;
+                        break;
+                    case 3 :
+                        slideBox.style.transform = 'translate(-50%)';
+                        slideIndex = 3;
+                        break;
+                    case 4 :
+                        slideBox.style.transform = 'translate(-75%)';
+                        slideIndex = 4;
+                        break;                    
+                    default : 
+                        moveSlide(1);
+                        break;
+                }
+            };
+
+            /* slide_btn1 눌렀을 때 함수 */
+            function prev_btn() {
+                if ( slideIndex == 1 ) {
+                    slideIndex = slideCount;
+                } else {
+                    slideIndex--;
+                }
+                moveSlide(slideIndex);
+            };
+
+            function next_btn() {
+                if ( slideIndex == slideCount ) {
+                    slideIndex = 1;
+                } else {
+                    slideIndex++;
+                }
+                moveSlide(slideIndex);
+            };
+
+            /* 5초에 한 장씩 자동으로 이동하는 함수 */
+            setInterval(function() {
+                if ( slideIndex < slideCount + 1 ) {
+                    moveSlide(++slideIndex);
+                } else {
+                    slideIndex = 1;
+                    moveSlide(slideIndex);
+                }                
+            }, 4000);
+        </script>
     </section>
 
     <section class="box">
-        <div id="product">
-            상품박스
-        </div>
+        <div class="tabmenu">
+            <ul>    
+                <li id="tab1" class="btnCon"> 
+                    <input type="radio" checked name="tabmenu" id="tabmenu1">
+                    <label for="tabmenu1">menu1</label>
+                        <div class="tabCon" >
+                            <a href="#"><img src="resources/img/menu1.png" alt="menu1이미지"></a>
+                            <a href="#"><img src="resources/img/menu1.png" alt="menu1이미지"></a>
+                            <a href="#"><img src="resources/img/menu1.png" alt="menu1이미지"></a>
+                            <a href="#"><img src="resources/img/menu1.png" alt="menu1이미지"></a>
+                        </div>           
+                </li>
+                <li id="tab2" class="btnCon">
+                    <input type="radio" name="tabmenu" id="tabmenu2">
+                    <label for="tabmenu2">menu2</label>
+                    <div class="tabCon" >
+                        <a href="#"><img src="resources/img/menu2.png" alt="menu2이미지"></a>
+                        <a href="#"><img src="resources/img/menu2.png" alt="menu2이미지"></a>
+                        <a href="#"><img src="resources/img/menu2.png" alt="menu2이미지"></a>
+                        <a href="#"><img src="resources/img/menu2.png" alt="menu2이미지"></a>
+                    </div>           
+                </li>    
+                <li id="tab3" class="btnCon">
+                    <input type="radio" name="tabmenu" id="tabmenu3">
+                    <label for="tabmenu3">menu3</label>
+                    <div class="tabCon" >내용3</div>        
+                </li>
+                <li id="tab4" class="btnCon">
+                    <input type="radio" name="tabmenu" id="tabmenu4">
+                    <label for="tabmenu4">menu4</label>
+                    <div class="tabCon" >내용4</div>        
+                </li>
+            </ul>
+            </div>
     </section>
 
     <section class="box">

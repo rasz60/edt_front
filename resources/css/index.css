@@ -8,7 +8,6 @@
     padding: 0 ;
     margin: 0 auto;
     text-align: center ;
-    align-items: center ;
     list-style: none;
 }
 
@@ -28,6 +27,7 @@ body {
 header {
     border: 1px solid red;
     display: flex ;
+    align-items: center;
     flex-wrap: nowrap;
     position: fixed ; top: 0;
     background-color: rgb(12, 12, 12);
@@ -101,7 +101,7 @@ header > #menu > ul {
 header > #menu > ul > li {
     display: flex;
     justify-content: center;
-    vertical-align: middle;
+    align-items: center;
     color: rgba(255, 255, 255, 0.897);
     width: 25% ;
     height: 100% ;
@@ -121,28 +121,28 @@ header > #menu > ul > li:hover {
     display: flex ;
     flex-wrap: nowrap;
     width: 100% ;
-    height: 15.625% ;
-    min-height: 500px ;
-    max-height: 625px ;
+    height: 500px ;
 }
 
 .box:nth-of-type(1) {
+    margin-top: 100px;
+    height: 625px;
+}
+
+.box > #container {
     position: relative;
-    margin-top: 5%;
-    overflow: hidden;
+    width: 100%;
 }
-
-
-#img_slide {
+.box > #container > #img_slide {
     display: flex;
-    width: 100%;
-    height: 100% ;
-    object-fit: cover;
-    background-color: rgb(54, 54, 54);
+    position: absolute;
+    width: 400%;
+    height: 100%;
+    transition : transform 0.2s;
 }
 
-#img_slide img {
-    width: 100%;
+.box > #container > #img_slide > li > img {
+    width: 100%; 
     height: 100%;
 }
 
@@ -150,9 +150,10 @@ header > #menu > ul > li:hover {
     display: flex;
     justify-content: space-between;
     position: absolute;
+    top: 9.5%;
     width: 100%;
     color: white;
-    background-color: transparent;
+    background-color: transparen t;
 }
 
 #slide_btn1 > span {
@@ -163,19 +164,19 @@ header > #menu > ul > li:hover {
 }
 
 #slide_btn1 > span:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     cursor: pointer;
 }
 
 #slide_btn2 {
     position: absolute;
     width: 100%;
-    top: 93% ;
+    top: 20% ;
 }
 
 #slide_btn2 > button {
-    width: 2%;
-    margin: 0 4px;
+    width: 4%;
+    margin: 0 5px;
     opacity: 0.6;
     transition: transform 300;
 }
@@ -184,9 +185,56 @@ header > #menu > ul > li:hover {
     opacity: 0.9;
 }
 
-.box > #product {
-    width: 100% ;
-    height: 100% ;
+.tabmenu {
+    width: 100%;
+    height: 100%;
+}
+
+.tabmenu ul li {
+width: 25%; /* 각 메뉴 별 사이즈 */
+float: left; /* 메뉴 왼쪽 정렬 */
+text-align: center;
+}
+
+.tabmenu input {
+display: none; /* radio 버튼 숨기기 */
+}
+
+.tabmenu input:checked ~ label {
+/* checked 된 tabmenu만 적용 */
+background: rgb(48, 48, 51);
+color: white;
+}
+
+.tabmenu input:checked ~ .tabCon {
+/* checked 된 tabCon만 적용 */
+display: block;
+background: rgb(48, 48, 51);
+}
+
+.tabmenu label {
+display: block;
+width: 100%;
+height: 40px;
+line-height: 40px;
+cursor: pointer;
+background: rgb(192, 191, 191);
+}
+
+.tabmenu .tabCon {
+width: 100%;
+height: 460px;
+min-width: 1200px;
+max-width: 2000px;
+display: none;
+position: absolute;
+left: 0;
+}
+
+.tabmenu .tabCon img {
+width: 15%;
+height: auto;
+margin: 50px;
 }
 
 .box > #video_box {
