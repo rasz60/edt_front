@@ -130,18 +130,27 @@ header > #menu > ul > li:hover {
 }
 
 .box > #container {
+<<<<<<< HEAD
     background-color: transparent;
     position: relative;
     width: 100%;
     z-index:;
+=======
+    position: relative;
+    width: 100%;
+>>>>>>> bbf82157058f9a8788c70faf3ab79d15b4d2d295
 }
 .box > #container > #img_slide {
     display: flex;
     position: absolute;
     width: 400%;
     height: 100%;
+<<<<<<< HEAD
     transition : transform 0.4s ease-in-out;
     cursor: pointer;
+=======
+    transition : transform 0.2s;
+>>>>>>> bbf82157058f9a8788c70faf3ab79d15b4d2d295
 }
 
 .box > #container > #img_slide > li > img {
