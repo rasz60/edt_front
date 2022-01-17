@@ -11,20 +11,32 @@
 <body>
     <header id="header">
         <div id="logo">
-            <img src="resources/img/logo-basic.png" onclick="location.href='index.html'">
+            <a href="index.html">
+                <img src="resources/img/logo-basic.png">
+            </a>
         </div>
 
         <div id="search">
             <input type="search" name="search" autofocus autocomplete="off" onfocus="this.placeholder=''" onblur="this.placeholder='brand, name, model . . .'">
-            <img src="resources/img/search_btn2.png" onclick="location.href='#'">
+            <a href="#">
+                <img src="resources/img/search_btn2.png">
+            </a>
         </div>
 
         <div id="menu">
             <ul>
-                <li onclick="location.href='#'">DRAW</li>
-                <li onclick="location.href='#'">SHOP</li>
-                <li onclick="location.href='#'">JOIN</li>
-                <li onclick="location.href='#'">LOGIN</li>
+                <li>
+                    <a href="#">DRAW</a>
+                </li>
+                <li>
+                    <a href="#">SHOP</a>
+                </li>
+                <li>
+                    <a href="#">JOIN</a>
+                </li>
+                <li>
+                    <a href="#">LOGIN</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -33,16 +45,24 @@
         <div id="container">
             <ul id="img_slide" onmouseover="stopSlide()" onmouseout="autoSlide()">
                 <li class="slides">
-                    <img src="resources/img/slide1.jpg" onclick="location.href='#'">
+                    <a href="#">
+                        <img src="resources/img/slide1.jpg">
+                    </a>
                 </li>
                 <li class="slides">
-                    <img src="resources/img/slide2.jpg" onclick="location.href='#'">
+                    <a href="#">
+                        <img src="resources/img/slide2.jpg">
+                    </a>
                 </li>
                 <li class="slides">
-                    <img src="resources/img/slide3.jpg" onclick="location.href='#'">
+                    <a href="#">
+                        <img src="resources/img/slide3.jpg">
+                    </a>
                 </li>
                 <li class="slides">
-                    <img src="resources/img/slide4.jpg" onclick="location.href='#'">
+                    <a href="#">
+                        <img src="resources/img/slide4.jpg">
+                    </a>
                 </li>
             </ul>
         </div>
@@ -115,7 +135,7 @@
                                         slideIndex = 1;
                                         moveSlide(slideIndex);
                                     };                
-                                }, 3500);
+                                    }, 3500);
             };
 
             /* 슬라이드가 정지하는 메서드 */
@@ -179,19 +199,70 @@
 
     <section class="box">
         <div id="event">
-            이벤트
+            <div class="event">
+                <ul>
+                    <li id="tab5" class="btnCon2">
+                        <input type="radio" checked name="evtmenu" id="evtmenu1">
+                        <label for="evtmenu1">menu3</label>
+                        <div class="tabCon">내용3</div>        
+                    </li>
+                    <li id="tab6" class="btnCon2">
+                        <input type="radio" name="evtmenu" id="evtmenu2">
+                        <label for="evtmenu2">menu4</label>
+                        <div class="tabCon">내용4</div>        
+                    </li>
+                </ul>
+            </div> 
         </div> 
     </section>
 
     <section class="box">
         <div id="img_box">
-            샵 설명 이미지
-        </div>
+            <a href="#">
+                <img src="resources/img/002.png" alt="">
+            </a>
+
     </section>
 
     <footer>
-        <div id="footer">
-            푸터
+        <div class="top">
+            <div class="footer_menu">
+                <h1>PRODUCTS</h1>
+                <ul>
+                    <li><a href="#">신상품</a></li>
+                    <li><a href="#">인기상품</a></li>
+                    <li><a href="#">할인상품</a></li>
+                    <li><a href="#">test1</a></li>
+                    <li><a href="#">test1</a></li>
+                </ul>
+            </div>
+            <div class="footer_menu">
+                <h1>BRAND</h1>
+                <ul>
+                    <li><a href="#">JORDAN</a></li>
+                    <li><a href="#">NIKE</a></li>
+                    <li><a href="#">ADIDAS</a></li>
+                    <li><a href="#">SUPREME</a></li>
+                    <li><a href="#">BALENCIAGA</a></li>
+                </ul>
+            </div>
+            <div class="footer_menu">
+                <h1>COMPANY</h1>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">인재채용</a></li>
+                    <li><a href="#">제휴제안</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="mid">
+            ddd
+        </div>
+        <div class="bottom">
+            ddd
         </div>
     </footer>
 

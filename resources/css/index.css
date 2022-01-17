@@ -7,8 +7,12 @@
 * {
     padding: 0 ;
     margin: 0 auto;
-    text-align: center ;
+    text-align: center;
     list-style: none;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', 'Lato', 'Spoqa Han Sans', sans-serif;
 }
 
 body {
@@ -21,7 +25,6 @@ body {
     max-height: 4000px ;
     width: 100% ;
     height: 100% ;
-    font-family: 'Noto Sans KR', 'Lato', 'Spoqa Han Sans', sans-serif;
 }
 
 /*================================= header START =================================*/
@@ -36,7 +39,6 @@ header {
     min-width: 1200px ;
     max-width: 2000px ;
     min-height: 100px ;
-    font-family: 'Shadows Into Light', cursive; font-weight: 700;
     z-index: 3;
     opacity: 0.9;
 }
@@ -81,14 +83,16 @@ header > #search > input::placeholder {
     font-style: italic;
     font-weight: 100;
 }
+header > #search > a {
+    margin: 0 0;
+}
 
-header > #search > img {
-    margin-left: 0;
+header > #search > a > img {
     cursor: pointer;
     transition: transform 2s;
 }
 
-header > #search > img:hover {
+header > #search > a> img:hover {
     transform: rotate(360deg);
 }
 /*------ header_search ------*/
@@ -115,12 +119,19 @@ header > #menu > ul > li {
     border: 0 0.1 0 0.1 solid rgb(219, 215, 215) ;
     transition: font-size 1s;
     cursor: pointer;
-}
 
+}
 
 header > #menu > ul > li:hover {
     font-size : 35px;
 }
+
+header > #menu > ul > li > a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Shadows Into Light', cursive; font-weight: 700;
+}
+
 /*------ header_menu ------*/
 /*================================= header END =================================*/
 
@@ -157,7 +168,7 @@ header > #menu > ul > li:hover {
     transition : transform 0.4s ease-in-out;
 }
 
-.box > #container > #img_slide > li > img {
+.box > #container > #img_slide > li > a > img {
     width: 100%; 
     height: 100%;
     cursor: pointer;
@@ -221,54 +232,58 @@ header > #menu > ul > li:hover {
 /*================================= .tabmenu START =================================*/
 .tabmenu {
     width: 100%;
-    height: 100%;
+    height: 3%;
+    min-width: 1200px;
+    max-width: 2000px;
+    min-height: 100px;
+    position: relative;
 }
 
 .tabmenu ul li {
-width: 25%; /* 각 메뉴 별 사이즈 */
-float: left; /* 메뉴 왼쪽 정렬 */
-text-align: center;
+    width: 25%; /* 각 메뉴 별 사이즈 */
+    float: left; /* 메뉴 왼쪽 정렬 */
+    text-align: center;
 }
 
 .tabmenu input {
-display: none; /* radio 버튼 숨기기 */
+    display: none; /* radio 버튼 숨기기 */
 }
 
 .tabmenu input:checked ~ label {
-/* checked 된 tabmenu만 적용 */
-background: rgb(140, 140, 145);
-color: white;
+    /* checked 된 tabmenu만 적용 */
+    background: rgb(48, 48, 51);
+    color: white;
 }
 
-.tabmenu input:checked ~ .tabCon {
-/* checked 된 tabCon만 적용 */
-display: block;
-background: rgb(65, 65, 66);
+input:checked ~ .tabCon {
+    /* checked 된 tabCon만 적용 */
+    display: block;
+    background: rgb(48, 48, 51);
 }
 
 .tabmenu label {
-display: block;
-width: 100%;
-height: 40px;
-line-height: 40px;
-cursor: pointer;
-background: rgb(192, 191, 191);
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    background: rgb(192, 191, 191);
 }
 
-.tabmenu .tabCon {
-width: 100%;
-height: 460px;
-min-width: 1200px;
-max-width: 2000px;
-display: none;
-position: absolute;
-left: 0;
+.tabCon {
+    width: 100%;
+    height: 460px;
+    min-width: 1200px;
+    max-width: 2000px;
+    display: none;
+    position: absolute;
+    left: 0;
 }
 
 .tabmenu .tabCon img {
-width: 15%;
-height: auto;
-margin: 50px;
+    width: 15%;
+    height: auto;
+    margin: 50px;
 }
 /*================================= .tabmenu END =================================*/
 
@@ -289,15 +304,37 @@ margin: 50px;
 
 
 /*================================= #event STRAT =================================*/
-.box > #event {
-    border: 1px solid red;
-    width: 100% ;
-    height: 100% ;
+.event {
+    width: 100%;
+    height: 3%;
+    min-width: 1200px;
+    max-width: 2000px;
+    min-height: 100px;
+    position: relative;
 }
 
-.box > #img_box {
-    width: 100% ;
-    height: 100% ;
+.event ul li {
+    width: 50%; /* 각 메뉴 별 사이즈 */
+    float: left; /* 메뉴 왼쪽 정렬 */
+    text-align: center;
+}
+
+.event input {
+    display: none; /* radio 버튼 숨기기 */
+}
+
+.event input:checked ~ label {
+    background: rgb(48, 48, 51);
+    color: white;
+}
+
+.event label {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    background: rgb(192, 191, 191);
 }
 /*================================= #event END =================================*/
 
@@ -306,23 +343,66 @@ margin: 50px;
 .box > #img_box {
     border: 1px solid red;
     width: 100% ;
-    height: 100% ;
+    height: 100%;
 }
 /*================================= #img_box END =================================*/
 
 
 /*================================= footer START =================================*/
 footer {
+    width: 100% ;
+    height: 100% ;
     border: 1px solid red;
-    display: flex;
     flex-wrap: nowrap;
     width: 100% ;
     height: 18.875% ;
     min-height: 600px ;
 }
 
-#footer {
-    width: 100% ;
-    height: 100% ;
+footer > .top{
+    width: 100%;
+    background-color: rgb(12, 12, 12);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+footer > .top > .footer_menu{
+    /* border: solid black 3px; */
+}
+
+footer > .top > .footer_menu > h1{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.897);
+    text-align: left;
+}
+
+footer > .top > .footer_menu > ul{
+    margin-top: 5px;
+    /* border: solid red 1px; */
+    width: 100%;
+}
+
+footer > .top > .footer_menu > ul > li{
+    /* border: solid yellow 1px; */
+    text-align: left;
+    margin-top: 1px;
+}
+
+footer > .top > .footer_menu > ul > li > a{
+    color: rgba(255, 255, 255, 0.897);
+    font-size: 16px;
+    /* border: solid red 1px; */
+}
+
+footer > .mid{
+    width: 100%;
+    height: 33%;
+    background-color: gainsboro;
+}
+footer > .bottom{
+    width: 100%;
+    height: 33%;
+    background-color: gainsboro;
 }
 /*================================= footer END =================================*/
