@@ -257,26 +257,6 @@ section {
     box-shadow: 0.5px 0.5px 2px rgba(70, 70, 71, 0.2);
 }
 
-#detail > #productDesc > #size_detail > #size_table tr:nth-child(1) td:hover {
-    background-color: rgb(188, 200, 241);
-    color: white;
-}
-
-#detail > #productDesc > #size_detail > #size_table tr:nth-child(2) td:hover {
-    background-color: rgb(179, 231, 224);
-    color: white;
-}
-
-#detail > #productDesc > #size_detail > #size_table tr:nth-child(3) td:hover {
-    background-color: rgb(241, 228, 184);
-    color: white;
-}
-
-#detail > #productDesc > #size_detail > #size_table tr:nth-child(4) td:hover {
-    background-color: rgb(238, 197, 228);
-    color: white;
-}
-
 #detail > #productDesc > #size_detail > #size_table #size_btn td {
     padding: 4px;
     border: 1px solid rgb(212, 212, 212);;
@@ -340,11 +320,21 @@ section {
 }
 
 #detail > #productDesc > #button > a > #purchase:hover {
-    background-color: #237e4f;
+    background-color: #50b17f;
 }
 
 #detail > #productDesc > #button > a > #hit {
     background-color: #ED853F;
+}
+
+#detail > #productDesc > #button > a > #hit span {
+    color: white;
+    font-weight: 700;
+}
+
+#detail > #productDesc > #button > a > #hit small {
+    color: white;
+    font-weight: 300;
 }
 
 #detail > #productDesc > #button > a > #hit:hover {
