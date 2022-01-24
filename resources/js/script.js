@@ -106,3 +106,12 @@ $(function hit_click() {
         }
     });
 });
+
+/*=====================================Products.html=====================================*/
+/* filter 글씨 누르면 색 바뀌기 */
+$(function () {
+    $(".filter").on("click", function() {
+        $(this).css({"color":"black", "font-weight":"700"});
+        $(this).siblings().css({"color":"#706B6B", "font-weight":"400"});
+    });
+});
